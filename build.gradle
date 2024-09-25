@@ -1,0 +1,23 @@
+apply plugin: "java"
+apply plugin: "maven-publish"
+
+group = "com.dev-smart"
+version = "0.0.1-SNAPSHOT"
+
+dependencies {
+        testImplementation "junit:junit:4.11"
+}
+
+repositories {
+        mavenCentral()
+}
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+    repositories {
+        mavenLocal()
+    }
+}
